@@ -56,13 +56,13 @@ namespace PoopEmoji
 
         private void Form1_Leave(object sender, EventArgs e)
         {
-            SendKeys.Send("^{v}");
+            
 
         }
 
         private void Form1_Validated(object sender, EventArgs e)
         {
-            SendKeys.Send("^{v}");
+            
         }
 
         private void richTextBox1_Validating(object sender, CancelEventArgs e)
