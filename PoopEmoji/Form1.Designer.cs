@@ -38,18 +38,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(36, 38);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Let there be poop";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblPoop
             // 
             this.lblPoop.AutoSize = true;
-            this.lblPoop.Location = new System.Drawing.Point(12, 41);
+            this.lblPoop.Location = new System.Drawing.Point(12, 15);
             this.lblPoop.Name = "lblPoop";
             this.lblPoop.Size = new System.Drawing.Size(95, 13);
             this.lblPoop.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 38);
+            this.textBox1.Location = new System.Drawing.Point(113, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(57, 20);
             this.textBox1.TabIndex = 2;
@@ -81,7 +81,7 @@
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(158, 42);
             this.richTextBox2.TabIndex = 4;
-            this.richTextBox2.Text = "Paste + Enter will trigger when you click outside this form";
+            this.richTextBox2.Text = "Paste + Enter will trigger when this form loses focus";
             // 
             // lblPaste
             // 
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(209, 246);
+            this.ClientSize = new System.Drawing.Size(209, 252);
             this.Controls.Add(this.lblPaste);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);

@@ -7,23 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//Date: 14-Jan-2018
+//Purpose: Poop emoji spammer
+//Author: Tom Broadwood
 namespace PoopEmoji
 {
     public partial class Form1 : Form
     {
-       // internal Label lbl = Form1.ActiveForm.lblPoop.text;
         public Form1()
         {
             InitializeComponent();
+            this.Focus();
         }
         int p = 0;
         public void button1_Click(object sender, EventArgs e)
         {
-            //Poop(1);
-            //lblPoop.Text = Poop(2);
-            //textBox1.Text = Poop(2);
-            
             try
             {
                 p = Convert.ToInt32(textBox1.Text);
@@ -38,8 +36,6 @@ namespace PoopEmoji
         }
         protected static string Poop(int k)
         {
-            // char c = '\uD83D\uDCA9';
-            //char c = feffd83ddca9;
             var c = "💩";
             for (int i = 1; i < k; i++)
             {
@@ -72,7 +68,6 @@ namespace PoopEmoji
 
         private void Form1_Validating(object sender, CancelEventArgs e)
         {
-            PoopKeys();
         }
 
         private void Form1_Deactivate(object sender, EventArgs e)
@@ -82,7 +77,6 @@ namespace PoopEmoji
 
         private void Form1_VisibleChanged(object sender, EventArgs e)
         {
-            PoopKeys();
         }
 
         private static void PoopKeys()
