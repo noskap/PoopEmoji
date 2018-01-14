@@ -20,11 +20,21 @@ namespace PoopEmoji
             this.Focus();
         }
         int p = 0;
+        bool poopedFlag = true;
         public void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                p = Convert.ToInt32(textBox1.Text);
+                if (Convert.ToInt32(textBox1.Text) > 999)
+                {
+                    p = 1;
+                    MessageBox.Show("Please don't go higher than 999.");
+                }
+                else
+                {
+                    p = Convert.ToInt32(textBox1.Text);
+                }
+
             }
             catch(Exception ex)
             {
@@ -33,6 +43,7 @@ namespace PoopEmoji
             richTextBox1.Text = Poop(p);
             Clipboard.SetText(Poop(p));
             lblPaste.Text = p.ToString() + " Poop(s) copied to clipboard!";
+            poopedFlag = false;
         }
         protected static string Poop(int k)
         {
@@ -42,7 +53,6 @@ namespace PoopEmoji
                 c += "\n💩";
             }
             return c.ToString();
-            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -79,10 +89,14 @@ namespace PoopEmoji
         {
         }
 
-        private static void PoopKeys()
+        internal void PoopKeys()
         {
-            SendKeys.Send("^{v}");
-            SendKeys.Send("{ENTER}");
+            if (!poopedFlag)
+            {
+                SendKeys.Send("^{v}");
+                SendKeys.Send("{ENTER}");
+                poopedFlag = true;
+            }
         }
     }
 }
