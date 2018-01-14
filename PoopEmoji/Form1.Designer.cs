@@ -32,6 +32,8 @@
             this.lblPoop = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.lblPaste = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -47,7 +49,7 @@
             // lblPoop
             // 
             this.lblPoop.AutoSize = true;
-            this.lblPoop.Location = new System.Drawing.Point(12, 38);
+            this.lblPoop.Location = new System.Drawing.Point(12, 41);
             this.lblPoop.Name = "lblPoop";
             this.lblPoop.Size = new System.Drawing.Size(95, 13);
             this.lblPoop.TabIndex = 1;
@@ -65,23 +67,50 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 82);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 102);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(158, 112);
+            this.richTextBox1.Size = new System.Drawing.Size(158, 92);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
+            this.richTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.richTextBox1_Validating);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Enabled = false;
+            this.richTextBox2.Location = new System.Drawing.Point(12, 200);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(158, 42);
+            this.richTextBox2.TabIndex = 4;
+            this.richTextBox2.Text = "Paste + Enter will trigger when you click outside this form";
+            // 
+            // lblPaste
+            // 
+            this.lblPaste.AutoSize = true;
+            this.lblPaste.Enabled = false;
+            this.lblPaste.Location = new System.Drawing.Point(33, 77);
+            this.lblPaste.Name = "lblPaste";
+            this.lblPaste.Size = new System.Drawing.Size(0, 13);
+            this.lblPaste.TabIndex = 5;
+            this.lblPaste.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(209, 202);
+            this.ClientSize = new System.Drawing.Size(209, 246);
+            this.Controls.Add(this.lblPaste);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblPoop);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Poop Spammer";
+            this.Deactivate += new System.EventHandler(this.Form1_Deactivate);
+            this.VisibleChanged += new System.EventHandler(this.Form1_VisibleChanged);
+            this.Leave += new System.EventHandler(this.Form1_Leave);
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.Form1_Validating);
+            this.Validated += new System.EventHandler(this.Form1_Validated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,6 +122,8 @@
         public System.Windows.Forms.Label lblPoop;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        internal System.Windows.Forms.Label lblPaste;
     }
 }
 
