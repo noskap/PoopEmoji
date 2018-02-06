@@ -45,14 +45,16 @@ namespace PoopEmoji
             lblPaste.Text = p.ToString() + " Poop(s) copied to clipboard!";
             poopedFlag = false;
         }
+        static string po = "💩";
+        static string c; 
         protected static string Poop(int k)
         {
-            var c = "💩";
+            var d = c;
             for (int i = 1; i < k; i++)
             {
-                c += "\n💩";
+                d += "\n"+c;
             }
-            return c.ToString();
+            return d.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -97,6 +99,15 @@ namespace PoopEmoji
                 SendKeys.Send("{ENTER}");
                 poopedFlag = true;
             }
+        }
+
+        private void textBox2_Validated(object sender, EventArgs e)
+        {
+            //change label here
+            po = textBox2.Text;
+            lblPoop.Text = "How many " + po + "'s?";
+            button1.Text =  "Let there be " + po;
+            c = textBox2.Text;
         }
     }
 }
